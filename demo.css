@@ -1,0 +1,55 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f6f6f6; color: #14181c; line-height: 1.6; }
+.hero { padding: 72px 24px 56px; background: #f0f4f1; text-align: center; }
+.brand { color: #12583f; font-weight: 700; letter-spacing: 2px; }
+.brand span { color: #8a948f; font-weight: 400; font-size: 14px; }
+.hero h1 { font-size: 52px; line-height: 1.18; letter-spacing: -2px; margin: 18px 0 14px; }
+.lead { font-size: 17px; color: #444; }
+.meta { margin-top: 14px; color: #8a948f; font-size: 13px; }
+.block { max-width: 760px; margin: 0 auto; padding: 40px 20px; }
+.block h2 { font-size: 24px; margin-bottom: 18px; letter-spacing: -0.5px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+.card { background: #fff; border-radius: 16px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+.card h3 { font-size: 17px; margin-bottom: 8px; }
+.card p { color: #555963; font-size: 14px; }
+.steps { list-style: none; counter-reset: step; }
+.steps li { background: #fff; border-radius: 14px; padding: 14px 18px 14px 52px; margin-bottom: 10px; position: relative; font-size: 15px; }
+.steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 16px; top: 12px; width: 26px; height: 26px; border-radius: 50%; background: #12583f; color: #fff; text-align: center; line-height: 26px; font-size: 14px; }
+.demo-block { background: #fff; border-radius: 20px; padding: 28px 22px; box-shadow: 0 2px 10px rgba(0,0,0,.05); }
+.tag { font-size: 13px; color: #12583f; background: #e8f2ed; padding: 4px 10px; border-radius: 20px; vertical-align: middle; }
+.hint { color: #8a948f; font-size: 13px; margin-bottom: 16px; }
+.controls label { display: block; font-size: 15px; margin-bottom: 14px; }
+.controls select { margin-left: 10px; padding: 8px 12px; border: 1px solid #d8dcd9; border-radius: 10px; font-size: 15px; background: #fff; }
+.chip-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 14px; }
+.chip-label { color: #70717b; font-size: 14px; margin-right: 4px; }
+.mood-chip, .pref-chip { border: none; background: #f5f5f5; color: #555963; border-radius: 20px; padding: 10px 18px; font-size: 14px; cursor: pointer; }
+.mood-chip.on, .pref-chip.on { background: #12583f; color: #fff; }
+.btn-row { display: flex; gap: 10px; margin: 18px 0 6px; }
+.btn { border: none; border-radius: 14px; padding: 12px 20px; font-size: 15px; background: #f0f2f1; color: #14181c; cursor: pointer; }
+.btn-primary { background: #14181c; color: #fff; }
+.summary { font-size: 14px; color: #12583f; margin: 10px 0; font-weight: 600; }
+.timeline { border-top: 1px solid #eee; }
+.track { display: flex; align-items: center; gap: 10px; padding: 10px 4px; border-bottom: 1px solid #f2f3f2; font-size: 14px; transition: background .2s; }
+.track.active { background: #eef5f1; border-radius: 8px; }
+.track-idx { color: #9aa19d; width: 22px; }
+.track-title { flex: 1; }
+.chip { padding: 2px 10px; border-radius: 12px; font-size: 12px; }
+.chip-low { background: #e8f2ed; color: #12583f; }
+.chip-medium { background: #fdf3e3; color: #9a6b1f; }
+.chip-high { background: #fbe9e7; color: #b0442f; }
+.chip-unknown { background: #eee; color: #777; }
+.track-dur { color: #9aa19d; font-size: 13px; }
+.playhead { font-size: 14px; color: #333; margin-top: 12px; }
+.adjust-row { margin-top: 4px; }
+.notice { font-size: 15px; color: #12583f; font-weight: 600; min-height: 24px; margin-top: 8px; }
+.trend-title { font-size: 17px; margin: 24px 0 10px; }
+.trend-wrap { width: 100%; }
+#trend { width: 100%; height: 260px; background: #fafbfa; border-radius: 12px; }
+.trend-cursor { text-align: center; color: #555963; font-size: 14px; margin-top: 8px; }
+.honest { list-style: none; }
+.honest li { padding: 8px 0 8px 26px; position: relative; font-size: 15px; color: #333; }
+.honest li::before { content: "✓"; position: absolute; left: 0; color: #12583f; font-weight: 700; }
+.foot { text-align: center; padding: 40px 20px 60px; color: #8a948f; font-size: 13px; }
+.foot p { margin-bottom: 6px; }
+.err { color: #b0442f; padding: 20px; }
+@media (max-width: 480px) { .hero h1 { font-size: 40px; } .block { padding: 28px 16px; } }
