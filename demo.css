@@ -44,7 +44,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft
 .notice { font-size: 15px; color: #12583f; font-weight: 600; min-height: 24px; margin-top: 8px; }
 .trend-title { font-size: 17px; margin: 24px 0 10px; }
 .trend-wrap { width: 100%; }
-#trend { width: 100%; height: 260px; background: #fafbfa; border-radius: 12px; }
+#trend { width: 100%; background: #fafbfa; border-radius: 12px; }
 .trend-cursor { text-align: center; color: #555963; font-size: 14px; margin-top: 8px; }
 .honest { list-style: none; }
 .honest li { padding: 8px 0 8px 26px; position: relative; font-size: 15px; color: #333; }
@@ -53,3 +53,12 @@ body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft
 .foot p { margin-bottom: 6px; }
 .err { color: #b0442f; padding: 20px; }
 @media (max-width: 480px) { .hero h1 { font-size: 40px; } .block { padding: 28px 16px; } }
+.intro { color: #444; margin-bottom: 16px; }
+.cta { display: inline-block; margin-top: 20px; background: #14181c; color: #fff; border-radius: 30px; padding: 14px 34px; text-decoration: none; font-size: 16px; }
+.feat .card h3 { font-size: 16px; }
+.flow { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.flow-step { background: #fff; border-radius: 16px; padding: 18px 22px; text-align: center; min-width: 150px; box-shadow: 0 1px 4px rgba(0,0,0,.04); }
+.flow-step b { display: inline-block; width: 30px; height: 30px; line-height: 30px; border-radius: 50%; background: #12583f; color: #fff; margin-bottom: 8px; }
+.flow-step p { font-size: 14px; color: #333; }
+.flow-arrow { color: #9aa19d; font-size: 20px; }
+#trend { width: 100%; background: #fafbfa; border-radius: 12px; }

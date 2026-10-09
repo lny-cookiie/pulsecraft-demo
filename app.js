@@ -142,10 +142,14 @@
   }
   function resizeTrend() {
     var wrap = el('trendWrap'), ratio = window.devicePixelRatio || 1;
-    state.canvas.width = wrap.clientWidth * ratio; state.canvas.height = 260 * ratio;
-    state.canvas.style.width = wrap.clientWidth + 'px'; state.canvas.style.height = '260px';
-    state.ctx.scale(ratio, ratio);
-    state.size = { width: wrap.clientWidth, height: 260 };
+    var width = wrap.clientWidth || 320;
+    // 图表布局高度随宽度等比（638 基准），否则宽屏下 band<=0 会静默不画（空白）。
+    var height = Math.max(280, Math.round(264 * width / 638) + 20);
+    if (!state.ctx) state.ctx = state.canvas.getContext('2d');
+    state.canvas.width = width * ratio; state.canvas.height = height * ratio;
+    state.canvas.style.width = width + 'px'; state.canvas.style.height = height + 'px';
+    state.ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+    state.size = { width: width, height: height };
     if (state.model) drawTrend();
   }
   function observeTrend() {

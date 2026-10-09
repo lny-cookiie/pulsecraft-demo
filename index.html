@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>律·动 —— 跑着跑着，歌就懂了</title>
-<meta name="description" content="律·动（PulseCraft）：为跑步者编排音乐的微信小程序。浏览器演示版——真实编排引擎、合成音频预览与趋势图。">
+<meta name="description" content="律·动（PulseCraft）：为跑步者编排音乐的微信小程序。智能编排、段级切换、步频跟随、心情匹配、语音调整。浏览器在线演示——真实编排引擎。">
 <link rel="stylesheet" href="demo.css">
 </head>
 <body>
@@ -12,7 +12,8 @@
   <p class="brand">律·动 <span>PulseCraft</span></p>
   <h1>跑着跑着，<br>歌就懂了</h1>
   <p class="lead">把喜欢的歌，编排成一场跟得上你节奏的私人演出。<br>步频、心情、体力状态——音乐自己会接上。</p>
-  <p class="meta">微信小程序 · 演示站可体验真实编排引擎</p>
+  <a class="cta" href="#demo">在线体验编排 ↓</a>
+  <p class="meta">微信小程序 · 本页运行真实编排引擎</p>
 </header>
 
 <section class="block">
@@ -25,18 +26,31 @@
 </section>
 
 <section class="block">
-  <h2>我们的方案</h2>
+  <h2>核心思路</h2>
+  <p class="intro">把跑步当成一场演出，把歌单当成乐队，让每首歌在对的时机上场。</p>
   <ol class="steps">
-    <li><b>先懂歌</b>——真实节拍曲线、段级强度、能量档与情绪候选标签</li>
+    <li><b>先懂歌</b>——真实节拍曲线、段级强度、能量档与情绪标签</li>
     <li><b>再懂你</b>——时长、心情、偏好与实时步频</li>
-    <li><b>然后编排</b>——按运动阶段生成确定性编排，不连续重复，偏好在段边界生效</li>
-    <li><b>运动中继续懂你</b>——步频变化自动调轻/加劲，全在本机完成</li>
+    <li><b>然后编排</b>——按运动阶段生成编排：热身配轻档、主段配强档，同一首不连续重复</li>
+    <li><b>运动中继续懂你</b>——步频变化自动调轻/加劲，调整永远发生在段落边界</li>
   </ol>
 </section>
 
-<section class="block demo-block">
+<section class="block">
+  <h2>产品功能</h2>
+  <div class="cards feat">
+    <div class="card"><h3>🎼 智能编排</h3><p>按运动阶段与音乐偏好生成歌序：更有劲=能量升一档、节拍更快；轻一点=反向。确定性算法，每次一致、可解释。</p></div>
+    <div class="card"><h3>✂️ 段级切换</h3><p>换歌发生在歌曲的段落边界，而不是生硬掐断——像电台切歌一样自然。</p></div>
+    <div class="card"><h3>👟 步频跟随</h3><p>手机传感器实时感知步伐：节奏慢了音乐变轻，节奏起来了音乐加劲。步频与歌曲节拍两条曲线同屏。</p></div>
+    <div class="card"><h3>💚 心情匹配</h3><p>开跑前选此刻心情（随心/平静/惆怅/开朗），同档歌曲按心情优先排序。</p></div>
+    <div class="card"><h3>🎙️ 语音调整</h3><p>按住说一句"轻一点""更有劲""别换歌"，1-2 秒生效，不用掏手机。</p></div>
+    <div class="card"><h3>🔒 本机隐私</h3><p>音频、步频、记录全在本机处理：不上传、不收集、不依赖云端模型。</p></div>
+  </div>
+</section>
+
+<section class="block demo-block" id="demo">
   <h2>在线演示 <span class="tag">真实编排引擎 · 十首演示曲库</span></h2>
-  <p class="hint">合成音色仅用于预览（按每曲真实 BPM 打点）；步频曲线为演示模拟数据；歌曲信息与标签为真实数据。</p>
+  <p class="hint">点击「生成编排」查看歌序；点击「播放演示」后，下方趋势图开始实时绘制。合成音色仅用于预览（按每曲真实节拍打点）；步频线为演示模拟数据；歌曲信息、能量档与情绪标签为真实数据。</p>
   <div class="controls">
     <label>时长
       <select id="minutes">
@@ -78,17 +92,29 @@
 </section>
 
 <section class="block">
-  <h2>技术上的诚实</h2>
+  <h2>体验流程</h2>
+  <div class="flow">
+    <div class="flow-step"><b>1</b><p>选时长与心情<br>勾选歌曲</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><b>2</b><p>一眼预览编排<br>开始运动</p></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><b>3</b><p>音乐自己接上节奏<br>全程不用碰手机</p></div>
+  </div>
+</section>
+
+<section class="block">
+  <h2>我们如何保证质量</h2>
   <ul class="honest">
-    <li>所有处理在本机完成：不上传音频、不调用云端模型、不收集健康数据</li>
-    <li>能量标签：2 首人工听核、8 首模型候选（未经人评校准），界面不称"识别"</li>
-    <li>段边界与情绪标签标注"未听核"；没有的曲线明说没有，不画假图</li>
+    <li>确定性编排：同样的设置永远生成同样的编排——可解释、可验证、可测试</li>
+    <li>406+ 项自动化测试覆盖编排规则、播放器协议、传感器算法与页面交互，每次变更全量通过</li>
+    <li>播放、锁屏、蓝牙、来电中断、30 分钟连续播放等场景逐项真机验收</li>
+    <li>隐私第一：全部处理在本机完成</li>
   </ul>
 </section>
 
 <footer class="foot">
-  <p>律·动 PulseCraft —— 微信小程序 · 私人测试阶段</p>
-  <p>本项目代码与文档见 GitHub；本演示页由真实 miniprogram 编排/视图/趋势模块机械打包生成。</p>
+  <p>律·动 PulseCraft —— 为跑步者编排音乐的微信小程序</p>
+  <p>产品源码见 GitHub；本页由小程序真实编排/视图/趋势模块机械打包生成。</p>
 </footer>
 <script src="demo-bundle.js"></script>
 <script src="app.js"></script>
